@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycle_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapter()
+        adapter = RecyclerAdapter(requireContext())
         recyclerView.adapter = adapter
 //        Log.d(" API1","HomeFragment")
         itemViewModel.getData()
@@ -62,6 +62,8 @@ class HomeFragment : Fragment() {
         })
 
     }
+
+
 
 //    fun onclick(position: Int, data: Bundle) {
 //        Toast.makeText(requireContext(), "" + position, Toast.LENGTH_SHORT).show()

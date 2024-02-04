@@ -12,16 +12,16 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="36dp"
-        android:layout_height="21dp"
+        android:layout_width="28dp"
+        android:layout_height="18dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="428dp"
-        android:layout_marginBottom="774dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="364dp"
+        android:layout_marginBottom="691dp"
         android:src="@drawable/sidearraw" />
 
     <ImageView
@@ -40,9 +40,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="386dp"
+        android:layout_height="366dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="417dp"
+        android:layout_marginTop="365dp"
         android:orientation="vertical"
         android:paddingTop="10dp">
 
@@ -57,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingTop="10dp">
+
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="377dp"
@@ -68,10 +69,13 @@
                     android:textColorHint="#D88A17"
                     android:textSize="25sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="31dp" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.115"
+                    tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -100,10 +104,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.18"
+                    app:layout_constraintHorizontal_bias="0.111"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.381" />
+                    app:layout_constraintVertical_bias="0.376" />
 
                 <TextView
                     android:id="@+id/textView13"
@@ -166,10 +170,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.17"
+                    app:layout_constraintHorizontal_bias="0.104"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.584" />
+                    app:layout_constraintVertical_bias="0.567" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -220,6 +224,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.568" />
 
+
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
@@ -227,10 +232,13 @@
                     android:text="Price :"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="67dp"
-                    tools:layout_editor_absoluteY="264dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView7"
+                    app:layout_constraintHorizontal_bias="0.693"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.771"
                     tools:ignore="MissingConstraints" />
-
 
                 <TextView
                     android:id="@+id/textView7"
@@ -240,10 +248,13 @@
                     android:textColor="#FF9800"
                     android:textSize="26sp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="152dp"
-                    tools:layout_editor_absoluteY="262dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintHorizontal_bias="0.672"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.772"
                     tools:ignore="MissingConstraints" />
-
 
                 <Button
                     android:id="@+id/button3"
@@ -258,10 +269,10 @@
                     app:backgroundTint="#FF9800"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.843"
+                    app:layout_constraintHorizontal_bias="0.851"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.788"
+                    app:layout_constraintVertical_bias="0.794"
                     app:rippleColor="#FF9800"
                     app:strokeColor="#FF9800" />
 
