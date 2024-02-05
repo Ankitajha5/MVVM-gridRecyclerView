@@ -18,9 +18,10 @@ class ItemViewModel : ViewModel() {
     private var itemArrayList: ArrayList<Shopping> = ArrayList()
     private var _item = MutableLiveData<ArrayList<Shopping>>()
     val item: LiveData<ArrayList<Shopping>> = _item
-   lateinit var DataItem :Shopping
+    lateinit var DataItem: Shopping
 
-    fun getData() {
+    init {
+
         val api = Retrofit.Builder()
             .baseUrl("https://api.potterdb.com")
             .addConverterFactory(GsonConverterFactory.create())
@@ -38,12 +39,14 @@ class ItemViewModel : ViewModel() {
                         item.attributes.name,
                         item.attributes.height
                     )
-                    itemArrayList.add(dataList)
+                    if (item.attributes.image != null) {
+                        itemArrayList.add(dataList)
+                    }
                 }
-                Log.d("TAG", "onResponse: "+itemArrayList.size)
-                _item.value=itemArrayList
-//                Log.d("TAG", "onResponse: "+_item.value.size)
+                _item.value = itemArrayList
+
             }
+
 
             override fun onFailure(call: Call<ApiData>, t: Throwable) {
 //                Log.i("Api", "failure")
@@ -51,7 +54,6 @@ class ItemViewModel : ViewModel() {
         })
 
     }
-
 }
 
 
