@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import eu.tutorials.assignment_task1.OnItemClickListener
 import eu.tutorials.assignment_task1.R
 import eu.tutorials.assignment_task1.ViewModel.ItemViewModel
 import eu.tutorials.assignment_task1.adapter.RecyclerAdapter
@@ -17,7 +18,7 @@ import eu.tutorials.assignment_task1.databinding.FragmentHomeBinding
 import eu.tutorials.assignment_task1.model.Shopping
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnItemClickListener {
     private lateinit var adapter: RecyclerAdapter
     private lateinit var recyclerView: RecyclerView
     private  var itemArrayList: ArrayList<Shopping> = ArrayList()
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
         FragmentHomeBinding.inflate(layoutInflater)
 
     }
+
 //    lateinit var image: Array<Int>
 //    lateinit var icon: Array<Int>
 //    lateinit var description: Array<String>
@@ -52,7 +54,7 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycle_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = RecyclerAdapter(requireContext())
+        adapter = RecyclerAdapter(requireContext(),this)
         recyclerView.adapter = adapter
 //        Log.d(" API1","HomeFragment")
         itemViewModel.getData()
@@ -65,15 +67,14 @@ class HomeFragment : Fragment() {
 
 
 
-//    fun onclick(position: Int, data: Bundle) {
-//        Toast.makeText(requireContext(), "" + position, Toast.LENGTH_SHORT).show()
+
+    override fun onclick( data: Shopping) {
 //        val bundle: Bundle = data
-//        val frag2 = FragmentTwo()
-//        frag2.arguments = bundle
-////        frag2.viewModel.dataItem=data
-//        val transac =
-//            this.parentFragmentManager.beginTransaction().replace(R.id.frame_layout, frag2)
-//                .addToBackStack(null)
-//        transac.commit()
-//    }
+        val frag2 = FragmentTwo()
+        itemViewModel.DataItem=data
+        val transac =
+            this.parentFragmentManager.beginTransaction().replace(R.id.frame_layout, frag2)
+                .addToBackStack(null)
+        transac.commit()
+    }
 }

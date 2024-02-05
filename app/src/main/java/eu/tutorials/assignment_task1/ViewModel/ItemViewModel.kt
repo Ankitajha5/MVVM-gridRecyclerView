@@ -18,6 +18,7 @@ class ItemViewModel : ViewModel() {
     private var itemArrayList: ArrayList<Shopping> = ArrayList()
     private var _item = MutableLiveData<ArrayList<Shopping>>()
     val item: LiveData<ArrayList<Shopping>> = _item
+   lateinit var DataItem :Shopping
 
     fun getData() {
         val api = Retrofit.Builder()

@@ -6,18 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import eu.tutorials.assignment_task1.OnItemClickListener
 import eu.tutorials.assignment_task1.R
 import eu.tutorials.assignment_task1.model.Shopping
-import kotlinx.coroutines.NonDisposableHandle.parent
 
-class RecyclerAdapter(var con : Context) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
+class RecyclerAdapter(var con : Context,var clickListner: OnItemClickListener) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
     private var itemList: ArrayList<Shopping> = ArrayList()
 //    private lateinit var con : Context
 
-    private lateinit var bundle: Bundle
+
+//    private lateinit var bundle: Bundle
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -33,10 +36,10 @@ class RecyclerAdapter(var con : Context) : RecyclerView.Adapter<RecyclerAdapter.
         holder.name.text = itemList[position].name
         holder.description.text = itemList[position].description
 //        bundle = Bundle()
-//        holder.L1.setOnClickListener {
-//            clickListner.onclick(position, bundle)
-//
-//        }
+        holder.L1.setOnClickListener {
+            clickListner.onclick( itemList[position])
+
+        }
     }
 
     override fun getItemCount(): Int {
@@ -51,7 +54,7 @@ class RecyclerAdapter(var con : Context) : RecyclerView.Adapter<RecyclerAdapter.
         val image: ImageView = itemView.findViewById(R.id.image)
         val name: TextView = itemView.findViewById(R.id.title)
         val description: TextView = itemView.findViewById(R.id.desc)
-//        val L1 : RelativeLayout = itemView.findViewById(R.id.L1)
+        val L1 :LinearLayout = itemView.findViewById(R.id.Linear)
     }
 
     fun getList(list: ArrayList<Shopping>) {
