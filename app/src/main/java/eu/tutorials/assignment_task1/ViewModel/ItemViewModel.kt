@@ -1,11 +1,9 @@
 package eu.tutorials.assignment_task1.ViewModel
 
-import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import eu.tutorials.assignment_task1.ApiInterface
+import eu.tutorials.assignment_task1.api.ApiInterface
 import eu.tutorials.assignment_task1.model.ApiData
 import eu.tutorials.assignment_task1.model.Shopping
 import retrofit2.Call
@@ -54,7 +52,12 @@ class ItemViewModel : ViewModel() {
         })
 
     }
+
+
 }
+
+
+
 
 
 
